@@ -1,40 +1,338 @@
+/* soft reset do css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    background-image: url('http://www.vanessametonini.com.br/imersaocss/a1/img/fundo.jpg');  
-    background-size: auto 100vh;
-    font-family: arial;  
-    height: 100vh;
+  background-image: url('../img/fundo.jpg');
+  background-size: auto 100vh; 
+  font-family: 'Source Code Pro', monospace;
+  height: 100vh;
+  font-size: 12px;
+}
+
+/* se a tela tiver pelo menos 400px vai carregar estes estilos */
+@media (min-width: 400px) {
+  body {
+    font-size: 14px;
   }
-  
-  .menu{
-    background-color: white;
+}
+
+/* breakpoint */
+@media (min-width: 600px) {
+  body {
+    background-attachment: fixed;
+    background-size: cover;
+    font-size: 18px;
   }
-  
-  .menu ul{
-    display: flex;
-    justify-content: space-around;
+}
+
+/* breakpoint */
+@media (min-width: 1200px) {
+  body {
+   
+    font-size: 20px;
   }
+}
+
+header {  
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu {
+  font-family: 'Rajdhani', sans-serif;  
+  background-color: #3a6d99;
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  z-index: 1;
   
-  .menu li{
-    list-style: none;
+}
+
+.menu ul {
+  display: flex;
+  justify-content: space-around;
+  background-color: #3a6d99;
+  
+}
+
+.menu li {
+ list-style: none; 
+
+}
+
+.menu a {
+  display: block;
+  padding: 10px 20px;  
+  color: white;
+  transition: background-color 1s, color 1s;
+}
+
+.menu a:active,
+.menu a:hover {
+  background-color:  rgba(250,160,25,0.33);
+  color: white;
+}
+
+a {
+  color: teal;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.titulo {
+  transform: scale(0.2) translateY(50vh);
+  opacity: 0;
+  animation: 1s ease 500ms animacaoTitulo forwards;  
+}
+
+@keyframes animacaoTitulo {
+  from {
+    transform: scale(0.2) translateY(50vh);
+    opacity: 0;
   }
-  
-  a{
-    color: teal;
-    text-decoration: none;
+  to {
+    transform: scale(1) translateY(0);
+    opacity: 1;
   }
+}
+
+.site-title {
+  color: whitesmoke;
+  text-align: center;
+  font-size: 3em;
+  font-family: 'Rajdhani', sans-serif;
+  animation: 3s ease-in-out 1s animacaoH1 infinite;  
   
-  a:hover{
-    text-decoration: underline;
+}
+
+@keyframes animacaoH1 {
+  0%{
+    text-shadow: 0px 0px 0px whitesmoke;
   }
-  
-  .site-subtitle,
-  .site-title{
-    color: whitesmoke;
-    text-align: center;  
+  33% {  
+    text-shadow: 0px 1px 10px rgba(250,160,25,0.33);
   }
-  
-  .site-subtitle{
-    font-style: italic;
+  66% {
+    text-shadow: 0px 1px 10px rgba(250, 160, 25, 0.70);
   }
-  
-  
+  100%{
+    text-shadow: 0px 1px 10px rgba(250,160,25,1);
+  }
+}
+
+
+@media (min-width: 800px) {
+  .site-title {    
+    font-size: 4em;    
+  }
+}
+
+.img-principal img{    
+  transition: text-shadow 1s;
+  opacity: 0.5;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 350px;
+  width: 350px;  
+}
+
+/* se a tela tiver pelo menos 400px vai carregar estes estilos */
+@media (min-width: 800px) {
+  .img-principal img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 450px;
+    width: 450px;
+  }
+}
+
+.sobre,
+.contato,
+.atuacao,
+.endereco {
+  padding: 2em;
+  min-height: 100vh;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+  }
+}
+
+
+.sobre h2,
+.contato h2,
+.atuacao h2,
+.endereco h2 {
+  font-family: 'Rajdhani', sans-serif;;
+  color: white;
+  margin-bottom: 0.1em;
+  font-size: 4em;
+}
+
+.sobre p {
+  color: white;
+  text-indent: 1.4em;
+  margin-bottom: 1.4em;
+  text-align: justify;
+}
+
+.sobre a {
+  color: white;
+  text-decoration: underline;
+}
+
+.sobre a:hover {
+  background-color: cyan;
+  text-decoration: none;
+  color: magenta;
+}
+
+.sobre .avatar {
+  clip-path: polygon(50% 0%, 100% 0%, 100% 75%, 50% 95%, 0% 75%, 0% 0%);
+  margin-left: 2em;
+}
+
+.avatar img {
+  height: 380px;
+  width: 380px;  
+}
+
+
+@media (min-width: 550px) {
+  .sobre .avatar {
+    clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+    float: right;
+  }
+  .avatar img{
+    height: 350px;
+    width: 350px;
+    }
+}
+
+@media (min-width: 1100px) {
+  .sobre .avatar {
+    clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+    float: right;
+  }
+  .avatar img{
+    height: 450px;
+    width: 450px;
+    }
+}
+
+
+.atuacao .grid {
+  display: grid;
+  gap: 2em;
+}
+
+@media (min-width: 560px) {
+  .atuacao .grid {
+    grid-template-columns: 240px 240px;
+  }
+}
+
+@media (min-width: 880px) {
+  .atuacao .grid {
+    grid-template-columns: repeat(3, 260px);
+    align-content: center;
+    justify-content: center;
+    height: calc(100vh - 8em - 48px);
+  }
+}
+
+.flip-card {
+  height: 180px;
+  perspective: 1000px;
+}
+
+.flip-card:hover .card {
+  transform: rotateY(180deg);
+}
+
+.card {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 3s;
+}
+
+.card-front, 
+.card-back {
+  backface-visibility: hidden;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.card-back {
+  display: flex;
+  font-family: 'Rajdhani', sans-serif; 
+  align-items: center;
+  justify-content: center;  
+  background-color:  rgba(250,160,25,0.33);
+  height: 180px;
+  width: 100%;
+  transform: rotateY(180deg);
+}
+
+.atuacao figure {
+  text-align: center;
+}
+
+.img-atuacao {
+  height: 180px;
+  width: 100%;
+  object-fit: cover;
+  object-position: left bottom;
+  transition: transform 500ms;
+}
+
+.endereco-conteudo {
+	width: 940px;
+	margin: 0 auto;
+}
+
+
+@media (max-width: 600px) {
+  .endereco-conteudo {    
+    width: 400px; 
+    margin: 0 auto;  
+  }
+}
+
+
+/* .img-atuacao:hover {
+  transform: scale(1.2) rotate(-2deg);
+} */
+
+.contato .icons {
+  text-align: center;
+}
+
+.contato a {
+  color: whitesmoke;
+  font-size: 4em;
+  transition: text-shadow 1s;
+}
+
+.contato a:active,
+.contato a:hover  {
+  text-decoration: none;
+  text-shadow: 0px 0px 10px rgba(255,255,255,.5);
+}
