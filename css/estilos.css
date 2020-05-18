@@ -110,8 +110,8 @@ a:hover {
   text-align: center;
   font-size: 3em;
   font-family: 'Rajdhani', sans-serif;
-  animation: 3s ease-in-out 1s animacaoH1 infinite;  
-  
+  animation: 3s ease-in-out 1s animacaoH1 infinite;     
+  margin-top: 1.5em;
 }
 
 @keyframes animacaoH1 {
@@ -132,13 +132,14 @@ a:hover {
 
 @media (min-width: 800px) {
   .site-title {    
-    font-size: 4em;    
+    font-size: 4em; 
+    margin-top: 0.2em;     
   }
 }
 
 .img-principal img{    
   transition: text-shadow 1s;
-  opacity: 0.8;
+  opacity: 0.4;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -152,8 +153,8 @@ a:hover {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    height: 350px;
-    width: 350px;
+    height: 400px;
+    width: 400px;
   }
 }
 
