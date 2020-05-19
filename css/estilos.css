@@ -50,20 +50,35 @@ header {
   position: fixed;
   width: 100vw;
   top: 0;
-  z-index: 1;
-  
+  z-index: 1;  
 }
 
 .menu ul {
   display: flex;
   justify-content: space-around;
-  background-color: #3a6d99;
-  
+  background-color: #3a6d99;  
 }
 
 .menu li {
  list-style: none; 
+}
 
+.whatsapp{
+  height:5em; 
+  position:fixed;
+  top: 3px;  
+  bottom: 10px; 
+  right: 10px; 
+  z-index:99999;
+}
+
+.whatsapp img {
+  height: 2em;
+  width: 2em;
+}
+
+.col-whatsapp{
+  padding-left: 3em;
 }
 
 .menu a {
